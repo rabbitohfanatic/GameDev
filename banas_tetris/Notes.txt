@@ -1,0 +1,4 @@
+TETRIS NOTES
+
+--Fix Score when multiple rows deleted at once
+--Fix Deletion of multiple rows at once

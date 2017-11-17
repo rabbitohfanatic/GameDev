@@ -1,0 +1,4 @@
+SPACE INVADERS NOTES
+
+--Complete game when player is destroyed
+--Complete game when all aliens are destroyed

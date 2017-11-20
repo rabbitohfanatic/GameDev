@@ -6,19 +6,44 @@ using UnityEngine.UI;
 
 public class PrizeBlock : MonoBehaviour {
 
+	private SpriteRenderer sr;
+
 	public AnimationCurve anim;
 
 	public int coinsInBlock = 5;
 
+	public Sprite explodedBlock;
+
+	public float secBeforeSpriteChange = 0.2f;
+
+	void Awake() {
+		sr = GetComponent<SpriteRenderer> ();
+	}
+
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.contacts [0].point.y < transform.position.y) {
-			StartCoroutine (RunAnimation ());
 
 			if (coinsInBlock > 0) {
-				SoundManager.Instance.PlayOneShot (SoundManager.Instance.getCoin);
 
-				IncreaseTextUIScore ();
+				if (coinsInBlock == 1) {
+					SoundManager.Instance.PlayOneShot (SoundManager.Instance.rockSmash);
+
+					sr.sprite = explodedBlock;
+					DestroyObject (gameObject, secBeforeSpriteChange);
+
+					IncreaseTextUIScore ();
+				} else {
+
+					StartCoroutine (RunAnimation ());
+						
+					SoundManager.Instance.PlayOneShot (SoundManager.Instance.getCoin);
+
+					IncreaseTextUIScore ();
+
+					--coinsInBlock;
+				}
 			}
+				
 		}
 	}
 

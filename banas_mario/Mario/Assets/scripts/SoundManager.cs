@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip jump;
 	public AudioClip getCoin;
 	public AudioClip rockSmash;
+	public AudioClip mannyDies;
 
 	private AudioSource soundEffectAudio;
 

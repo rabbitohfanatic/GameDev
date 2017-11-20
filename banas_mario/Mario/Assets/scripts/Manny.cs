@@ -25,10 +25,16 @@ public class Manny : MonoBehaviour {
 
 	private float maxJumpTime = 0.2f;
 
+	public float wallJumpY = 10f;
+
 	void FixedUpdate(){
 		float horzMove = Input.GetAxisRaw ("Horizontal");
 		Vector2 vect = rb.velocity;
 		rb.velocity = new Vector2 (horzMove * speed, vect.y);
+
+		if (IsWallOnLeftOrRight () && !IsOnGround () && horzMove == 1) {
+			rb.velocity = new Vector2 (-GetWallDirection () * speed * -0.75f, wallJumpY);
+		}
 		animator.SetFloat ("Speed", Mathf.Abs(horzMove));
 
 		if (horzMove < 0 && !facingRight) {
@@ -42,6 +48,7 @@ public class Manny : MonoBehaviour {
 		if (IsOnGround () && isJumping == false) {
 			if (vertMove > 0f) {
 				isJumping = true;
+				SoundManager.Instance.PlayOneShot (SoundManager.Instance.jump);
 			} 
 		}
 
@@ -107,8 +114,35 @@ public class Manny : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-	// Update is called once per frame
-	void Update () {
-		
+	public bool IsWallOnLeft(){
+		return Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y),
+			-Vector2.right, 
+			rayCastLength);
 	}
+
+	public bool IsWallOnRight(){
+		return Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y),
+			-Vector2.right, 
+			rayCastLength);
+	}
+
+	public bool IsWallOnLeftOrRight(){
+		if (IsWallOnLeft () || IsWallOnRight ()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public int GetWallDirection(){
+		if (IsWallOnLeft ()) {
+			return -1;
+		} else if (IsWallOnRight ()) {
+			return 1;
+		} else {
+			return 0;
+		}
+
+	}
+
 }

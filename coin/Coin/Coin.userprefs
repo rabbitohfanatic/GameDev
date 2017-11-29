@@ -1,13 +1,15 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\coin.cs">
+﻿<Properties StartupConfiguration="{B3859DF9-2CBA-5F2D-951A-3235F43B4C68}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PhysicsObject.cs">
     <Files>
-      <File FileName="Assets\Scripts\coin.cs" Line="28" Column="1" />
-      <File FileName="..\..\banas_spaceinvaders\space_invaders\Assets\scripts\Alien.cs" Line="9" Column="2" NotebookId="1" />
+      <File FileName="Assets/Scripts/coin.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PhysicsObject.cs" Line="15" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Coin PreferredExecutionTarget="Unity.Editor" />
+  <MultiItemStartupConfigurations />
 </Properties>

@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class coin : MonoBehaviour {
 
-	public float speed = 30;
-
-	public float jumpSpeed = 8;
+	public float speed = 5;
 
 	private Rigidbody2D rigidBody;
 
@@ -18,10 +16,6 @@ public class coin : MonoBehaviour {
 		float horzMove = Input.GetAxisRaw ("Horizontal");
 
 		rigidBody.velocity = new Vector2 (horzMove, 0) * speed;
-
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			rigidBody.AddForce (new Vector2 (0, 10), ForceMode2D.Impulse);
-		}
 	}
 }
 

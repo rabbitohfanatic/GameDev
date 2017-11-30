@@ -99,7 +99,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BaseJump.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\coin.cs" />
+    <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\PhysicsObject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

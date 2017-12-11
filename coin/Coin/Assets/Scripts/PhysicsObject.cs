@@ -37,9 +37,19 @@ public class PhysicsObject : MonoBehaviour {
         contactFilter.useLayerMask = true;
     }
 
+    private void Update(){
+        targetVelocity = Vector2.zero; 
+        ComputeVelocity();
+    }
+
+    protected virtual void ComputeVelocity(){
+        
+    }
+
     //Runs every frame to Calculate gravity of object
     void FixedUpdate() {
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+        velocity.x = targetVelocity.x;
 
         grounded = false;
 

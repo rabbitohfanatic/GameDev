@@ -8,7 +8,7 @@ public class BaseJump : MonoBehaviour {
     public float jumpVelocity;
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         if(Input.GetButtonDown("Jump")){
             GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpVelocity;
         }

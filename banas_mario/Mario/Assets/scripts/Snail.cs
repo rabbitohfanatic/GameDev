@@ -20,8 +20,8 @@ public class Snail : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.name == "Manny"){
-            if (col.contacts[0].point.y > transform.position.y){
-                GetComponent<Animator>().SetTrigger("Dead");
+            if (col.contacts[1].point.y > transform.position.y){
+				GetComponent<Animator>().SetTrigger("Dead");
                 GetComponent<Collider2D>().enabled = false;
                 direction = new Vector2(direction.x, -1);
                 DestroyObject(gameObject, 3);

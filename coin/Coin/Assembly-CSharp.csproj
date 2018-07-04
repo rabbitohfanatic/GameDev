@@ -46,6 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AutoMove.cs" />
+     <Compile Include="Assets\Scripts\BaseJump.cs" />
+     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Jump.cs" />
+     <Compile Include="Assets\Scripts\PhysicsObject.cs" />
+     <Compile Include="Assets\Scripts\PlayerPlatformController.cs" />
      <Compile Include="Assets\Scripts\coin.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Programs/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
